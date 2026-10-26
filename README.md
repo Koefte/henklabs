@@ -1,24 +1,24 @@
-# Mobile App Studio Legal Compliance & Landing Website
+# Henk Labs – Mobile App Studio Legal Compliance & Landing Website
 
-[![Deploy to GitHub Pages](https://github.com/yourusername/compliance-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/yourusername/compliance-website/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/Koefte/compliance-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/Koefte/compliance-website/actions/workflows/deploy.yml)
 [![Zero External Trackers](https://img.shields.io/badge/GDPR-100%25%20Compliant-success)](#)
 [![Zero Build Steps](https://img.shields.io/badge/Build-Zero%20Dependencies-blue)](#)
 
-A static, high-performance developer entity website and compliance suite designed for **free hosting on GitHub Pages**. 
+Official developer entity website and compliance suite for **Henk Labs** (Developer: **Henk van Wersch**, Aachen, Germany), hosted for free on **GitHub Pages** with custom domain **`https://henklabs.me`**.
 
-This site fulfills all mandatory developer verification requirements for:
-1. **Google Play Console Organization / Developer Account Verification** (DUNS number & official domain ownership matching).
+This repository fulfills all mandatory legal and developer verification requirements for:
+1. **Google Play Console Organization / Developer Account Verification** (DUNS number & official domain `henklabs.me` ownership).
 2. **German Legal Compliance (§ 5 DDG & § 18 MStV)** for an indie mobile app studio operating as a German *Einzelunternehmen / Kleingewerbe* in Aachen.
 3. **European GDPR (DSGVO Articles 12–21)** for offline-first Android apps using Google Play Billing and RevenueCat.
 4. **IAB Tech Lab `app-ads.txt`** mobile publisher verification.
 
 ---
 
-## ⚡ Key Highlights & Architecture
+## ⚡ Highlights
 
 - **Zero Build Steps & Zero Dependencies:** Pure static HTML5 and CSS. No `node_modules`, no npm, no build pipelines.
-- **Blazing Fast (< 50ms):** Single-digit millisecond response times on GitHub Pages / Fastly CDN edges.
-- **Zero Privacy Leaks:** **NO** Google Fonts (`fonts.googleapis.com`), **NO** external tracking pixels, **NO** cookies, **NO** analytics scripts. Fully compliant with German court precedents (LG München I, 2022).
+- **Blazing Fast (< 50ms):** Single-digit millisecond response times on GitHub Pages CDN edges.
+- **Zero Privacy Leaks:** **NO** Google Fonts (`fonts.googleapis.com`), **NO** external tracking pixels, **NO** cookies, **NO** analytics scripts. 100% compliant with German court precedents (LG München I, 2022).
 - **Responsive & Dual-Themed:** Fluid mobile-first layout with automatic dark and light mode (`prefers-color-scheme`).
 
 ---
@@ -31,7 +31,7 @@ This site fulfills all mandatory developer verification requirements for:
 │   └── workflows/
 │       └── deploy.yml      # Automated GitHub Actions Pages deployment
 ├── .gitignore              # Standard git ignore file
-├── CNAME                   # Custom apex domain configuration for GitHub Pages
+├── CNAME                   # Custom domain routing: henklabs.me
 ├── README.md               # Setup, DNS, and Play Console verification guide
 ├── app-ads.txt             # IAB Tech Lab authorized sellers file for AdMob
 ├── impressum.html          # German § 5 DDG & § 18 MStV legal notice
@@ -42,53 +42,30 @@ This site fulfills all mandatory developer verification requirements for:
 
 ---
 
-## 🛠️ Step 1: Search-and-Replace Placeholders
+## 🚀 Setup & Deployment Guide
 
-Run a global search-and-replace across all files in this repository for the following placeholders:
+### 1. Push to GitHub
+Create a new GitHub repository under your account (`https://github.com/Koefte/<your-repo-name>`):
+```bash
+cd /home/koefte/Documents/HenkStartup/compliance-website
+git remote add origin https://github.com/Koefte/<your-repo-name>.git
+git push -u origin main
+```
 
-| Token | Example Value | Description | Affected Files |
-|---|---|---|---|
-| `{{STUDIO_NAME}}` | `Aachen App Labs` | Public brand / studio name | `index.html`, `impressum.html`, `privacy.html` |
-| `{{DEVELOPER_NAME}}` | `Max Mustermann` | Legal full name of the sole proprietor (*Einzelunternehmer*) | `index.html`, `impressum.html`, `privacy.html` |
-| `{{STREET_AND_NUMBER}}` | `Templergraben 55` | Valid summonable street address (*ladungsfähige Anschrift*) in Aachen | `impressum.html`, `privacy.html` |
-| `{{ZIP_CITY}}` | `52062 Aachen` | Postal code and city | `impressum.html`, `privacy.html` |
-| `{{CONTACT_EMAIL}}` | `support@yourstudio.me` | Public support and compliance email address | `index.html`, `impressum.html`, `privacy.html` |
-| `{{PHONE_NUMBER}}` | `+49 241 XXXXXXXX` | Business phone number (or note: *auf Anfrage*) | `impressum.html` |
-| `{{CUSTOM_DOMAIN}}` | `yourstudio.me` | Custom domain name (without `https://` or `www`) | `CNAME`, `impressum.html`, `privacy.html` |
-| `{{UST_IDNR}}` | `DE123456789` | German VAT ID (if assigned; otherwise keep note provided in template) | `impressum.html` |
-| `{{GITHUB_URL}}` | `https://github.com/yourusername` | Link to your GitHub profile or organization | `index.html`, `impressum.html`, `privacy.html` |
-| `{{ANDROID_PACKAGE_ID}}`| `com.example.microapp.micro_app_factory` | Google Play application package ID | `index.html` |
-| `{{ADMOB_PUB_ID}}` | `pub-1234567890123456` | 16-digit AdMob Publisher ID *(only if ads are used)* | `app-ads.txt` |
-
-> [!IMPORTANT]
-> **German Legal Address Requirement:** Section 5 of the German DDG (*Digitale-Dienste-Gesetz*) strictly requires a summonable address (*ladungsfähige Anschrift*). A pure P.O. box (*Postfach*) is **not** legally sufficient under German law.
+### 2. Enable GitHub Pages
+1. Go to your repository **Settings** &rarr; **Pages** (under *Code and automation*).
+2. Under **Build and deployment &rarr; Source**, select **GitHub Actions** (it will automatically use `.github/workflows/deploy.yml`).
+3. Under **Custom domain**, enter `henklabs.me` and click **Save**.
+4. Once DNS is verified, check **Enforce HTTPS**.
 
 ---
 
-## 🚀 Step 2: Enable GitHub Pages
+## 🌐 Namecheap DNS Configuration for `henklabs.me`
 
-1. Push this repository to GitHub:
-   ```bash
-   git add .
-   git commit -m "feat: initial release of compliance and studio landing site"
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   git push -u origin main
-   ```
-2. In your GitHub repository, open **Settings** &rarr; **Pages** (under *Code and automation*).
-3. Under **Build and deployment &rarr; Source**, select:
-   - **GitHub Actions** *(Recommended - utilizes the included `.github/workflows/deploy.yml` workflow)*.
-   - Alternatively, choose **Deploy from a branch**, select branch `main` and folder `/ (root)`.
-4. In the **Custom domain** field, enter your domain (e.g., `yourstudio.me`) and click **Save**.
-5. Once your DNS has propagated (see Step 3 below), check the box **Enforce HTTPS**.
+Log in to Namecheap &rarr; **Domain List** &rarr; click **Manage** next to `henklabs.me` &rarr; open **Advanced DNS** tab and set:
 
----
-
-## 🌐 Step 3: Configure DNS Records (Namecheap / Any Registrar)
-
-Log in to your DNS provider (e.g., Namecheap &rarr; *Domain List* &rarr; *Manage* &rarr; *Advanced DNS*) and add the following records:
-
-### 1. Apex Domain A-Records (Point to GitHub Pages Edge Servers)
-Add **4 A-Records** for the Host `@`:
+### 1. Apex Domain A-Records (GitHub Pages IP Addresses)
+Add 4 **A Records** for Host `@`:
 
 | Type | Host | Value | TTL |
 |---|---|---|---|
@@ -97,51 +74,32 @@ Add **4 A-Records** for the Host `@`:
 | **A Record** | `@` | `185.199.110.153` | Automatic / 300s |
 | **A Record** | `@` | `185.199.111.153` | Automatic / 300s |
 
-### 2. IPv6 AAAA Records (Optional but Recommended)
+### 2. CNAME Record for `www` Subdomain
 | Type | Host | Value | TTL |
 |---|---|---|---|
-| **AAAA Record** | `@` | `2606:50c0:8000::153` | Automatic / 300s |
-| **AAAA Record** | `@` | `2606:50c0:8001::153` | Automatic / 300s |
-| **AAAA Record** | `@` | `2606:50c0:8002::153` | Automatic / 300s |
-| **AAAA Record** | `@` | `2606:50c0:8003::153` | Automatic / 300s |
-
-### 3. CNAME Record for `www` Subdomain
-Redirects `www.yourstudio.me` to your GitHub Pages apex domain:
-
-| Type | Host | Value | TTL |
-|---|---|---|---|
-| **CNAME Record** | `www` | `<your-github-username>.github.io.` | Automatic / 300s |
+| **CNAME Record** | `www` | `koefte.github.io.` | Automatic / 300s |
 
 ---
 
-## 🔍 Step 4: Verify Domain in Google Search Console (For Google Play Verification)
+## 🔍 Google Play Organization Account Domain Verification
 
-Google Play Console requires verification of your official website domain during organization / developer onboarding:
+Google Play Console requires verification of your official domain during organization account setup:
 
 1. Open [Google Search Console](https://search.google.com/search-console).
-2. Select **Domain** property type (not *URL prefix*) and enter your domain: `yourstudio.me`.
-3. Google Search Console will provide a **DNS TXT verification record**, for example:
-   ```
-   google-site-verification=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-   ```
-4. In your Namecheap DNS records:
+2. Choose **Domain** property and enter `henklabs.me`.
+3. Copy the **DNS TXT verification record** provided by Google (e.g. `google-site-verification=...`).
+4. In Namecheap Advanced DNS:
    - Add a new **TXT Record**.
    - Host: `@`
-   - Value: `google-site-verification=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+   - Value: `google-site-verification=...`
    - TTL: Automatic / 300s
-5. Wait 2–5 minutes and click **Verify** in Google Search Console.
-6. Once verified, link this verified domain in your **Google Play Console &rarr; Developer Account &rarr; About you &rarr; Website**.
+5. Wait 2 minutes and click **Verify** in Google Search Console.
+6. In Google Play Console &rarr; Developer Account setup, submit `https://henklabs.me` as your official developer website.
 
 ---
 
-## 📱 Step 5: Update Your Flutter Micro-App URLs
+## 📋 Outstanding Developer Actions Checklist
 
-Once your site is live, open your mobile app's `lib/config/app_config.dart` file and update the compliance endpoints:
-
-```dart
-// lib/config/app_config.dart
-static const String impressumUrl = 'https://yourstudio.me/impressum.html';
-static const String privacyPolicyUrl = 'https://yourstudio.me/privacy.html';
-```
-
-All in-app legal dialogs, drawer links, and Google Play Store metadata will now automatically resolve to your legal developer pages.
+- [ ] **VAT ID (USt-IdNr.):** Once received from the Bundeszentralamt für Steuern (BZSt), insert it into `impressum.html` line 87 (currently marked with the standard compliant pending note).
+- [ ] **Google Play Package ID:** Once your Google Play Organization account is approved, add the package ID to `index.html`.
+- [ ] **AdMob (Optional):** If you decide to serve ads in the future, uncomment and add your publisher ID to `app-ads.txt`.
