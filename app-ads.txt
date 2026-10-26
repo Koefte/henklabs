@@ -1,0 +1,16 @@
+# ==============================================================================
+# app-ads.txt – IAB Tech Lab Authorized Sellers for Mobile Apps
+# Specification: https://iabtechlab.com/app-ads-txt/
+#
+# INSTRUCTIONS FOR DEVELOPER:
+# 1. If you enable Google AdMob in your apps, replace the placeholder below
+#    with your own 16-digit AdMob Publisher ID (found in AdMob: Settings -> Account).
+# 2. Format:
+#    <Ad Network Domain>, <Publisher Account ID>, <Relationship Type>, <Certification Authority ID>
+#
+# Example:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# ==============================================================================
+
+# Uncomment and update the line below when Google AdMob is activated:
+# google.com, pub-{{ADMOB_PUB_ID}}, DIRECT, f08c47fec0942fa0
