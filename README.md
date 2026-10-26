@@ -1,10 +1,10 @@
-# Henk Labs – Mobile App Studio Legal Compliance & Landing Website
+# Henk Studio – Mobile App Studio Legal Compliance & Landing Website
 
 [![Deploy to GitHub Pages](https://github.com/Koefte/compliance-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/Koefte/compliance-website/actions/workflows/deploy.yml)
 [![Zero External Trackers](https://img.shields.io/badge/GDPR-100%25%20Compliant-success)](#)
 [![Zero Build Steps](https://img.shields.io/badge/Build-Zero%20Dependencies-blue)](#)
 
-Official developer entity website and compliance suite for **Henk Labs** (Developer: **Henk van Wersch**, Aachen, Germany), hosted for free on **GitHub Pages** with custom domain **`https://henkstudio.me`**.
+Official developer entity website and compliance suite for **Henk Studio** (Developer: **Henk van Wersch**, Aachen, Germany), hosted for free on **GitHub Pages** with custom domain **`https://henkstudio.me`**.
 
 This repository fulfills all mandatory legal and developer verification requirements for:
 1. **Google Play Console Organization / Developer Account Verification** (DUNS number & official domain `henkstudio.me` ownership).
